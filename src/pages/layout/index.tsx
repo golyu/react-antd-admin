@@ -21,6 +21,7 @@ const { Sider, Content, Footer } = Layout
 const WIDTH = 992
 
 const LayoutPage: FC = () => {
+  const [website] = useState<string>('https://github.com/WinmezzZ/react-antd-admin')
   const [menuList, setMenuList] = useState<MenuList>([])
   const { device, collapsed, newUser } = useSelector((state: AppState) => state.globalReducer)
   const isMobile = device === 'MOBILE'
@@ -123,13 +124,8 @@ const LayoutPage: FC = () => {
       <Footer className="layout-page-footer">
         <Text>
           github:{' '}
-          <a
-            style={{ color: 'royalblue' }}
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://github.com/WinmezzZ/react-antd-admin"
-          >
-            https://github.com/WinmezzZ/react-antd-admin
+          <a style={{ color: 'royalblue' }} rel="noopener noreferrer" target="_blank" href={website}>
+            {website}
           </a>
         </Text>
         <br />
