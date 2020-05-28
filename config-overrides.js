@@ -5,10 +5,10 @@ const path = require('path')
 const AntDesignThemePlugin = require('antd-theme-webpack-plugin')
 
 const options = {
-  antDir: path.join(__dirname, './node_modules/antd'), 
+  antDir: path.join(__dirname, './node_modules/antd'),
   stylesDir: path.join(__dirname, './src/styles'),
-  varFile: path.join(__dirname, './src/styles/var.less'), 
-  mainLessFile: path.join(__dirname, './src/styles/index.less'), 
+  varFile: path.join(__dirname, './src/styles/var.less'),
+  mainLessFile: path.join(__dirname, './src/styles/index.less'),
   themeVariables: ['@primary-color'],
   indexFileName: 'index.html',
   generateOnce: false,
@@ -36,7 +36,7 @@ module.exports = override(
     javascriptEnabled: true,
   }),
   addWebpackAlias({
-    '~': resolve('src')
+    '~': resolve('src'),
   }),
   addWebpackPlugin(
     // new BundleAnalyzerPlugin(),

@@ -85,6 +85,9 @@ const HeaderComponent: FC<Props> = ({ collapsed, toggle }) => {
         <div onClick={toggle}>
           <span id="sidebar-trigger">{collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}</span>
         </div>
+        <div style={{ width: '100%', textAlign: 'left' }}>
+          <span style={{ marginLeft: '20px', fontSize: '26px' }}>邻派跨境仓储系统</span>
+        </div>
         <div className="actions">
           <HeaderNoticeComponent />
           <Dropdown
@@ -107,12 +110,12 @@ const HeaderComponent: FC<Props> = ({ collapsed, toggle }) => {
           {logged ? (
             <Dropdown overlay={menu} trigger={['click']}>
               <span className="user-action">
-                <img src={Avator} className="user-avator" />
+                <img src={Avator} className="user-avator" alt={''} />
               </span>
             </Dropdown>
           ) : (
             <span style={{ cursor: 'pointer' }} onClick={toLogin}>
-              {formatMessage({ id: 'gloabal.tips.login' })}
+              {formatMessage({ id: 'global.tips.login' })}
             </span>
           )}
         </div>

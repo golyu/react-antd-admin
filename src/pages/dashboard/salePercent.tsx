@@ -48,7 +48,7 @@ const data: Data = {
   ]
 }
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#E36E7E', '#8F66DE']
+const COLORS = ['#0088FE', '#00c49f', '#FFBB28', '#FF8042', '#E36E7E', '#8F66DE']
 
 const wrapperCol: ColProps = {
   xs: 24,

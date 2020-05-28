@@ -11,15 +11,15 @@ const PrivateRoute: FC<RouteProps> = ({ path, element }) => {
   const { formatMessage } = useLocale()
 
   return logged ? (
-    <Route path={path} element={element}></Route>
+    <Route path={path} element={element} />
   ) : (
     <Result
       status="403"
       title="403"
-      subTitle={formatMessage({ id: 'gloabal.tips.unauthorized' })}
+      subTitle={formatMessage({ id: 'global.tips.unauthorized' })}
       extra={
         <Button type="primary" onClick={() => navigate('/login', { replace: true, state: { from: path } })}>
-          {formatMessage({ id: 'gloabal.tips.goToLogin' })}
+          {formatMessage({ id: 'global.tips.goToLogin' })}
         </Button>
       }
     />

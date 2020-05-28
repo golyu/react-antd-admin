@@ -15,13 +15,14 @@ import { setUserItem } from '~/actions/user.action'
 import ThemeSwitch from './themeSwitch'
 import { useGuide } from '../guide/useGuide'
 import { Outlet, useLocation, useNavigate } from 'react-router'
+import { useLocale } from '~/locales'
 
 const { Text } = Typography
 const { Sider, Content, Footer } = Layout
 const WIDTH = 992
 
 const LayoutPage: FC = () => {
-  const [website] = useState<string>('https://github.com/WinmezzZ/react-antd-admin')
+  const [website] = useState<string>('https://www.google.com')
   const [menuList, setMenuList] = useState<MenuList>([])
   const { device, collapsed, newUser } = useSelector((state: AppState) => state.globalReducer)
   const isMobile = device === 'MOBILE'
@@ -29,6 +30,7 @@ const LayoutPage: FC = () => {
   const { driverStart } = useGuide()
   const location = useLocation()
   const navigate = useNavigate()
+  const { formatMessage } = useLocale()
 
   useEffect(() => {
     if (location.pathname === '/') {
@@ -92,7 +94,6 @@ const LayoutPage: FC = () => {
     newUser && driverStart()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newUser])
-
   return (
     <Layout className="layout-page">
       <HeaderComponent collapsed={collapsed} toggle={toggle} />
@@ -123,13 +124,13 @@ const LayoutPage: FC = () => {
       </Layout>
       <Footer className="layout-page-footer">
         <Text>
-          github:{' '}
+          {formatMessage({ id: 'global.tips.website' })}:{' '}
           <a style={{ color: 'royalblue' }} rel="noopener noreferrer" target="_blank" href={website}>
             {website}
           </a>
         </Text>
         <br />
-        <Text>赣ICP备18008240号 | Copyright © 2019 - 2020 </Text>
+        <Text>{formatMessage({ id: 'global.tips.record' })} </Text>
       </Footer>
     </Layout>
   )
