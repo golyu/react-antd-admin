@@ -97,7 +97,27 @@ const mockMenuList: MenuList = [
       en_US: 'Recharge Reconciliation'
     },
     key: '5',
-    path: '/recharge/reconciliation'
+    path: '/recharge',
+    children: [
+      {
+        name: 'rechargeCenter',
+        label: {
+          zh_CN: '充值中心',
+          en_US: 'Recharge Center'
+        },
+        key: '2-1',
+        path: '/recharge/center'
+      },
+      {
+        name: 'rechargeDetails',
+        label: {
+          zh_CN: '充值明细',
+          en_US: 'Recharge Details'
+        },
+        key: '2-2',
+        path: '/recharge/details'
+      }
+    ]
   }
 ]
 

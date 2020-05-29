@@ -13,7 +13,8 @@ const RoutePermission = lazy(() => import(/* webpackChunkName: "route-permission
 const ButtonPermission = lazy(() => import(/* webpackChunkName: "button-permission"*/ '~/pages/permission/button'))
 const PermissionConfig = lazy(() => import(/* webpackChunkName: "permission-config'"*/ '~/pages/permission/config'))
 const AccountPage = lazy(() => import(/* webpackChunkName: "account'"*/ '~/pages/account'))
-const RechargeReconciliation = lazy(() => import(/* webpackChunkName: "recharge-reconciliation" */ '~/pages/recharge'))
+const RechargeCenter = lazy(() => import(/* webpackChunkName: "recharge-center" */ '~/pages/recharge/center'))
+const RechargeDetails = lazy(() => import(/* webpackChunkName: "recharge-details" */ '~/pages/recharge/details'))
 
 export const routeList: RouteProps[] = [
   {
@@ -81,10 +82,17 @@ export const routeList: RouteProps[] = [
         }
       },
       {
-        path: 'recharge/reconciliation',
-        element: <RechargeReconciliation />,
+        path: 'recharge/center',
+        element: <RechargeCenter />,
         meta: {
-          titleId: 'title.recharge.reconciliation'
+          titleId: 'title.recharge.center'
+        }
+      },
+      {
+        path: 'recharge/details',
+        element: <RechargeDetails />,
+        meta: {
+          titleId: 'title.recharge.details'
         }
       },
       {

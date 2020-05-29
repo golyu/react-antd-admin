@@ -8,5 +8,7 @@ export const enUS_title = {
   'title.permission.button': 'Button Permission',
   'title.permission.config': 'Permission Config',
   'title.account': 'Account',
-  'title.recharge.reconciliation': 'Recharge Reconciliation'
+  'title.recharge.reconciliation': 'Recharge Reconciliation',
+  'title.recharge.center': 'Recharge Center',
+  'title.recharge.details': 'Recharge details'
 }
