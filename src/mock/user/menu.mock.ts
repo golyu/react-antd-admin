@@ -88,7 +88,7 @@ const mockMenuList: MenuList = [
     },
     icon: 'account',
     key: '4',
-    path: '/account',
+    path: '/user',
     children: [
       {
         name: 'userInfo',
@@ -106,7 +106,7 @@ const mockMenuList: MenuList = [
           en_US: 'Update Password'
         },
         key: '4-1',
-        path: '/update/password'
+        path: '/user/update/password'
       }
     ]
   },

@@ -105,7 +105,7 @@ export const routeList: RouteProps[] = [
         }
       },
       {
-        path: 'update/password',
+        path: 'user/update/password',
         element: <UpdatePassword />,
         meta: {
           titleId: 'title.update.password'
