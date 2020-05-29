@@ -10,5 +10,7 @@ export const zhCN_title = {
   'title.account': '个人设置',
   'title.recharge.reconciliation': '充值对账',
   'title.recharge.center': '充值中心',
-  'title.recharge.details': '充值明细'
+  'title.recharge.details': '充值明细',
+  'title.user.info': '用户资料',
+  'title.update.password': '修改密码'
 }

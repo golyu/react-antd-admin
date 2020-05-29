@@ -15,6 +15,8 @@ const PermissionConfig = lazy(() => import(/* webpackChunkName: "permission-conf
 const AccountPage = lazy(() => import(/* webpackChunkName: "account'"*/ '~/pages/account'))
 const RechargeCenter = lazy(() => import(/* webpackChunkName: "recharge-center" */ '~/pages/recharge/center'))
 const RechargeDetails = lazy(() => import(/* webpackChunkName: "recharge-details" */ '~/pages/recharge/details'))
+const UserInfo = lazy(() => import(/* webpackChunkName: "user-info" */ '~/pages/user/info'))
+const UpdatePassword = lazy(() => import(/* webpackChunkName: "update-password" */ '~/pages/user/password'))
 
 export const routeList: RouteProps[] = [
   {
@@ -93,6 +95,20 @@ export const routeList: RouteProps[] = [
         element: <RechargeDetails />,
         meta: {
           titleId: 'title.recharge.details'
+        }
+      },
+      {
+        path: 'user/info',
+        element: <UserInfo />,
+        meta: {
+          titleId: 'title.user.info'
+        }
+      },
+      {
+        path: 'update/password',
+        element: <UpdatePassword />,
+        meta: {
+          titleId: 'title.update.password'
         }
       },
       {

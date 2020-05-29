@@ -88,7 +88,27 @@ const mockMenuList: MenuList = [
     },
     icon: 'account',
     key: '4',
-    path: '/account'
+    path: '/account',
+    children: [
+      {
+        name: 'userInfo',
+        label: {
+          zh_CN: '用户资料',
+          en_US: 'User Info'
+        },
+        key: '4-0',
+        path: '/user/info'
+      },
+      {
+        name: 'updatePassword',
+        label: {
+          zh_CN: '修改密码',
+          en_US: 'Update Password'
+        },
+        key: '4-1',
+        path: '/update/password'
+      }
+    ]
   },
   {
     name: 'rechargeReconciliation',
@@ -105,7 +125,7 @@ const mockMenuList: MenuList = [
           zh_CN: '充值中心',
           en_US: 'Recharge Center'
         },
-        key: '2-1',
+        key: '5-0',
         path: '/recharge/center'
       },
       {
@@ -114,7 +134,7 @@ const mockMenuList: MenuList = [
           zh_CN: '充值明细',
           en_US: 'Recharge Details'
         },
-        key: '2-2',
+        key: '5-1',
         path: '/recharge/details'
       }
     ]

@@ -10,5 +10,7 @@ export const enUS_title = {
   'title.account': 'Account',
   'title.recharge.reconciliation': 'Recharge Reconciliation',
   'title.recharge.center': 'Recharge Center',
-  'title.recharge.details': 'Recharge details'
+  'title.recharge.details': 'Recharge details',
+  'title.user.info': 'User Info',
+  'title.update.password': 'Update Password'
 }
