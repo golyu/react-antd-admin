@@ -5,6 +5,7 @@ import LoginPage from '~/pages/login'
 import LayoutPage from '~/pages/layout'
 import { RouteProps } from './config'
 import { Routes, Route } from 'react-router'
+
 const NotFound = lazy(() => import(/* webpackChunkName: "404'"*/ '~/pages/404'))
 const Documentation = lazy(() => import(/* webpackChunkName: "404'"*/ '~/pages/doucumentation'))
 const Guide = lazy(() => import(/* webpackChunkName: "guide'"*/ '~/pages/guide'))
@@ -12,6 +13,7 @@ const RoutePermission = lazy(() => import(/* webpackChunkName: "route-permission
 const ButtonPermission = lazy(() => import(/* webpackChunkName: "button-permission"*/ '~/pages/permission/button'))
 const PermissionConfig = lazy(() => import(/* webpackChunkName: "permission-config'"*/ '~/pages/permission/config'))
 const AccountPage = lazy(() => import(/* webpackChunkName: "account'"*/ '~/pages/account'))
+const RechargeReconciliation = lazy(() => import(/* webpackChunkName: "recharge-reconciliation" */ '~/pages/recharge'))
 
 export const routeList: RouteProps[] = [
   {
@@ -76,6 +78,13 @@ export const routeList: RouteProps[] = [
         element: <AccountPage />,
         meta: {
           titleId: 'title.account'
+        }
+      },
+      {
+        path: 'recharge/reconciliation',
+        element: <RechargeReconciliation />,
+        meta: {
+          titleId: 'title.recharge.reconciliation'
         }
       },
       {

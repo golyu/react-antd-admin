@@ -1,4 +1,5 @@
 export const enUS_title = {
+  'title.notFount': '404',
   'title.login': 'Login',
   'title.dashboard': 'Dashboard',
   'title.documentation': 'Documentation',
@@ -7,5 +8,5 @@ export const enUS_title = {
   'title.permission.button': 'Button Permission',
   'title.permission.config': 'Permission Config',
   'title.account': 'Account',
-  'title.notFount': '404'
+  'title.recharge.reconciliation': 'Recharge Reconciliation'
 }

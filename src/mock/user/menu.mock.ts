@@ -89,6 +89,15 @@ const mockMenuList: MenuList = [
     icon: 'account',
     key: '4',
     path: '/account'
+  },
+  {
+    name: 'rechargeReconciliation',
+    label: {
+      zh_CN: '充值对账',
+      en_US: 'Recharge Reconciliation'
+    },
+    key: '5',
+    path: '/recharge/reconciliation'
   }
 ]
 
