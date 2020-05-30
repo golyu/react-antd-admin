@@ -196,6 +196,44 @@ const mockMenuList: MenuList = [
         path: '/warehouse/orders'
       }
     ]
+  },
+  {
+    name: 'inventory',
+    label: {
+      zh_CN: '库存管理',
+      en_US: 'Inventory Manager'
+    },
+    key: '8',
+    path: '/inventory',
+    children: [
+      {
+        name: 'commodityAdd',
+        label: {
+          en_US: 'Commodity Add',
+          zh_CN: '添加商品'
+        },
+        key: '8-0',
+        path: '/inventory/commodity/add'
+      },
+      {
+        name: 'commodityList',
+        label: {
+          en_US: 'Commodity List',
+          zh_CN: '商品列表'
+        },
+        key: '8-1',
+        path: '/inventory/commodity/list'
+      },
+      {
+        name: 'inventoryDetails',
+        label: {
+          zh_CN: '库存明细',
+          en_US: 'Inventory Details'
+        },
+        key: '8-2',
+        path: '/inventory/details'
+      }
+    ]
   }
 ]
 

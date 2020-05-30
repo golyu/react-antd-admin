@@ -18,5 +18,9 @@ export const enUS_title = {
   'title.dedicated.line.package.orders': 'Dedicated Package Orders',
   'title.warehouse.manager': 'Warehouse Manager',
   'title.warehouse.create': 'Warehouse Create',
-  'title.warehouse.orders': 'WareHouse Orders'
+  'title.warehouse.orders': 'WareHouse Orders',
+  'title.inventory.manager': 'Inventory Manager',
+  'title.commodity.list': 'Commodity List',
+  'title.commodity.add': 'Commodity Add',
+  'title.inventory.details': 'Inventory Details'
 }

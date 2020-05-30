@@ -21,6 +21,13 @@ const TryCreate = lazy(() => import(/* webpackChunkName: "package-create" */ '~/
 const Orders = lazy(() => import(/* webpackChunkName: "package-orders" */ '~/pages/package/orders'))
 const CreateWarehouse = lazy(() => import(/* webpackChunkName: "warehouse-create" */ '~/pages/warehouse/create'))
 const WarehouseOrders = lazy(() => import(/* webpackChunkName: "warehouse-orders" */ '~/pages/warehouse/orders'))
+const CommodityAdd = lazy(() =>
+  import(/* webpackChunkName: "inventory-commodity-add" */ '~/pages/inventory/commodity/add')
+)
+const CommodityList = lazy(() =>
+  import(/* webpackChunkName: "inventory-commodity-list" */ '~/pages/inventory/commodity/list')
+)
+const InventoryDetails = lazy(() => import(/* webpackChunkName: "inventory-details" */ '~/pages/inventory/details'))
 
 export const routeList: RouteProps[] = [
   {
@@ -141,6 +148,27 @@ export const routeList: RouteProps[] = [
         element: <WarehouseOrders />,
         meta: {
           titleId: 'title.warehouse.orders'
+        }
+      },
+      {
+        path: 'inventory/commodity/add',
+        element: <CommodityAdd />,
+        meta: {
+          titleId: 'title.commodity.add'
+        }
+      },
+      {
+        path: 'inventory/commodity/list',
+        element: <CommodityList />,
+        meta: {
+          titleId: 'title.commodity.list'
+        }
+      },
+      {
+        path: 'inventory/details',
+        element: <InventoryDetails />,
+        meta: {
+          titleId: 'title.inventory.details'
         }
       },
       {

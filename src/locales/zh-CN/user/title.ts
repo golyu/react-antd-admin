@@ -18,5 +18,9 @@ export const zhCN_title = {
   'title.dedicated.line.package.orders': '专线小包订单列表',
   'title.warehouse.manager': '仓储管理',
   'title.warehouse.create': '添加仓储订单',
-  'title.warehouse.orders': '仓储订单列表'
+  'title.warehouse.orders': '仓储订单列表',
+  'title.inventory.manager': '库存管理',
+  'title.commodity.list': '商品列表',
+  'title.commodity.add': '添加商品',
+  'title.inventory.details': '库存明细'
 }
