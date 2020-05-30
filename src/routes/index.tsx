@@ -30,6 +30,9 @@ const CommodityList = lazy(() =>
 const InventoryDetails = lazy(() => import(/* webpackChunkName: "inventory-details" */ '~/pages/inventory/details'))
 const ShopAdd = lazy(() => import(/* webpackChunkName: "shop-add" */ '~/pages/shop/add'))
 const ShopList = lazy(() => import(/* webpackChunkName: "shop-list" */ '~/pages/shop/list'))
+const CreateOrder = lazy(() => import(/* webpackChunkName: "order-create" */ '~/pages/order/create'))
+const OrderList = lazy(() => import(/* webpackChunkName: "order-list" */ '~/pages/order/list'))
+const SyncOrder = lazy(() => import(/* webpackChunkName: "order-sync" */ '~/pages/order/sync'))
 
 export const routeList: RouteProps[] = [
   {
@@ -185,6 +188,27 @@ export const routeList: RouteProps[] = [
         element: <ShopList />,
         meta: {
           titleId: 'title.shop.list'
+        }
+      },
+      {
+        path: 'order/create',
+        element: <CreateOrder />,
+        meta: {
+          titleId: 'title.order.manual.create'
+        }
+      },
+      {
+        path: 'order/list',
+        element: <OrderList />,
+        meta: {
+          titleId: 'title.order.list'
+        }
+      },
+      {
+        path: 'order/sync',
+        element: <SyncOrder />,
+        meta: {
+          titleId: 'title.order.sync'
         }
       },
       {

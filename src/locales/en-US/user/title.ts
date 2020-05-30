@@ -25,5 +25,8 @@ export const enUS_title = {
   'title.inventory.details': 'Inventory Details',
   'title.shop.manager': 'Shop Manager',
   'title.shop.add': 'Shop Add',
-  'title.shop.list': 'Shop List'
+  'title.shop.list': 'Shop List',
+  'title.order.list': 'Order List',
+  'title.order.sync': 'Synchronize Order',
+  'title.order.manual.create': 'Manually create a packaging order'
 }

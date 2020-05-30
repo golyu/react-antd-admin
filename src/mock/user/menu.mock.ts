@@ -263,7 +263,44 @@ const mockMenuList: MenuList = [
         path: '/shop/list'
       }
     ]
+  },
+  {
+    name: 'order',
+    label: {
+      zh_CN: '订单管理',
+      en_US: 'Order Manager'
+    },
+    key: '10',
+    path: '/order',
+    children: [
+      {
+        name: 'orderCreate',
+        label: {
+          zh_CN: '手动创建待打包订单',
+          en_US: 'Manually create a packaging order'
+        },
+        key: '10-0',
+        path: '/order/create'
+      },
+      {
+        name: 'orderList',
+        label: {
+          zh_CN: '订单列表',
+          en_US: 'Order List'
+        },
+        key: '10-1',
+        path: '/order/list'
+      },
+      {
+        name: 'orderSync',
+        label: {
+          zh_CN: '同步订单',
+          en_US: 'Synchronize Order'
+        },
+        key: '10-2',
+        path: '/order/sync'
+      }
+    ]
   }
 ]
-
 mock.mock('/user/menu', 'get', intercepter(mockMenuList))

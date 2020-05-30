@@ -25,5 +25,8 @@ export const zhCN_title = {
   'title.inventory.details': '库存明细',
   'title.shop.manager': '店铺管理',
   'title.shop.add': '添加店铺',
-  'title.shop.list': '店铺列表'
+  'title.shop.list': '店铺列表',
+  'title.order.list': '订单列表',
+  'title.order.sync': '同步订单',
+  'title.order.manual.create': '手动创建代打包订单'
 }
