@@ -17,6 +17,8 @@ const RechargeCenter = lazy(() => import(/* webpackChunkName: "recharge-center" 
 const RechargeDetails = lazy(() => import(/* webpackChunkName: "recharge-details" */ '~/pages/recharge/details'))
 const UserInfo = lazy(() => import(/* webpackChunkName: "user-info" */ '~/pages/user/info'))
 const UpdatePassword = lazy(() => import(/* webpackChunkName: "update-password" */ '~/pages/user/password'))
+const TryCreate = lazy(() => import(/* webpackChunkName: "package-create" */ '~/pages/package/create'))
+const Orders = lazy(() => import(/* webpackChunkName: "package-orders" */ '~/pages/package/orders'))
 
 export const routeList: RouteProps[] = [
   {
@@ -109,6 +111,20 @@ export const routeList: RouteProps[] = [
         element: <UpdatePassword />,
         meta: {
           titleId: 'title.update.password'
+        }
+      },
+      {
+        path: 'package/create',
+        element: <TryCreate />,
+        meta: {
+          titleId: 'title.dedicated.line.package.try.create'
+        }
+      },
+      {
+        path: 'package/orders',
+        element: <Orders />,
+        meta: {
+          titleId: 'title.dedicated.line.package.orders'
         }
       },
       {

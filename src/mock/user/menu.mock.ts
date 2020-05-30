@@ -138,6 +138,35 @@ const mockMenuList: MenuList = [
         path: '/recharge/details'
       }
     ]
+  },
+  {
+    name: 'package',
+    label: {
+      zh_CN: '专线小包管理',
+      en_US: 'Dedicated Line Package Manager'
+    },
+    key: '6',
+    path: '/package',
+    children: [
+      {
+        name: 'tryCreate',
+        label: {
+          zh_CN: '试算价格/创建订单',
+          en_US: 'Trial Price/Create Order'
+        },
+        key: '6-0',
+        path: '/package/create'
+      },
+      {
+        name: 'orders',
+        label: {
+          zh_CN: '专线小包订单列表',
+          en_US: 'Dedicated Package Orders'
+        },
+        key: '6-1',
+        path: '/package/orders'
+      }
+    ]
   }
 ]
 

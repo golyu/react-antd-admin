@@ -12,5 +12,8 @@ export const zhCN_title = {
   'title.recharge.center': '充值中心',
   'title.recharge.details': '充值明细',
   'title.user.info': '用户资料',
-  'title.update.password': '修改密码'
+  'title.update.password': '修改密码',
+  'title.dedicated.line.package.manager': '专线小包管理',
+  'title.dedicated.line.package.try.create': '试算价格/创建订单',
+  'title.dedicated.line.package.orders': '专线小包订单列表'
 }

@@ -12,5 +12,8 @@ export const enUS_title = {
   'title.recharge.center': 'Recharge Center',
   'title.recharge.details': 'Recharge details',
   'title.user.info': 'User Info',
-  'title.update.password': 'Update Password'
+  'title.update.password': 'Update Password',
+  'title.dedicated.line.package.manager': 'Dedicated Line Package Manager',
+  'title.dedicated.line.package.try.create': 'Trial Price/Create Order',
+  'title.dedicated.line.package.orders': 'Dedicated Package Orders'
 }
