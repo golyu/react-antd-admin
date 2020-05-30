@@ -15,7 +15,7 @@ export const enUS_account = {
   'app.settings.basic.country': 'Country/Region',
   'app.settings.basic.country-message': 'Please input your country!',
   'app.settings.basic.geographic': 'Province or city',
-  'app.settings.basic.geographic-message': 'Please input your geographic info!',
+  'app.settings.basic.geographic-message': 'Please input your geographic warehouse!',
   'app.settings.basic.address': 'Street Address',
   'app.settings.basic.address-message': 'Please input your address!',
   'app.settings.basic.phone': 'Phone Number',

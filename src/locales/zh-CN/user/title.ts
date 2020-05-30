@@ -2,6 +2,7 @@ export const zhCN_title = {
   'title.notFount': '404',
   'title.login': '登录',
   'title.dashboard': '首页',
+  'title.warehouse.service.info': '仓库服务信息',
   'title.documentation': '文档',
   'title.guide': '引导页',
   'title.permission.route': '路由权限',

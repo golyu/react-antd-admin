@@ -97,7 +97,7 @@ const mockMenuList: MenuList = [
           en_US: 'User Info'
         },
         key: '4-0',
-        path: '/user/info'
+        path: '/user/warehouse'
       },
       {
         name: 'updatePassword',
@@ -301,6 +301,15 @@ const mockMenuList: MenuList = [
         path: '/order/sync'
       }
     ]
+  },
+  {
+    name: 'warehouseServiceInfo',
+    label: {
+      zh_CN: '仓库服务信息',
+      en_US: 'Warehouse Service Info'
+    },
+    key: '11',
+    path: '/service/warehouse/info'
   }
 ]
 mock.mock('/user/menu', 'get', intercepter(mockMenuList))

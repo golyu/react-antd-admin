@@ -2,6 +2,7 @@ export const enUS_title = {
   'title.notFount': '404',
   'title.login': 'Login',
   'title.dashboard': 'Dashboard',
+  'title.warehouse.service.info': 'Warehouse Service Info',
   'title.documentation': 'Documentation',
   'title.guide': 'Guide',
   'title.permission.route': 'Route Permission',

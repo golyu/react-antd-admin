@@ -15,7 +15,7 @@ const PermissionConfig = lazy(() => import(/* webpackChunkName: "permission-conf
 const AccountPage = lazy(() => import(/* webpackChunkName: "account'"*/ '~/pages/account'))
 const RechargeCenter = lazy(() => import(/* webpackChunkName: "recharge-center" */ '~/pages/recharge/center'))
 const RechargeDetails = lazy(() => import(/* webpackChunkName: "recharge-details" */ '~/pages/recharge/details'))
-const UserInfo = lazy(() => import(/* webpackChunkName: "user-info" */ '~/pages/user/info'))
+const UserInfo = lazy(() => import(/* webpackChunkName: "user-warehouse" */ '~/pages/user/info'))
 const UpdatePassword = lazy(() => import(/* webpackChunkName: "update-password" */ '~/pages/user/password'))
 const TryCreate = lazy(() => import(/* webpackChunkName: "package-create" */ '~/pages/package/create'))
 const Orders = lazy(() => import(/* webpackChunkName: "package-orders" */ '~/pages/package/orders'))
@@ -33,7 +33,9 @@ const ShopList = lazy(() => import(/* webpackChunkName: "shop-list" */ '~/pages/
 const CreateOrder = lazy(() => import(/* webpackChunkName: "order-create" */ '~/pages/order/create'))
 const OrderList = lazy(() => import(/* webpackChunkName: "order-list" */ '~/pages/order/list'))
 const SyncOrder = lazy(() => import(/* webpackChunkName: "order-sync" */ '~/pages/order/sync'))
-
+const WarehouseServiceInfo = lazy(() =>
+  import(/* webpackChunkName: "warehouse-service-warehouse" */ '~/pages/service/warehouse')
+)
 export const routeList: RouteProps[] = [
   {
     path: 'login',
@@ -54,6 +56,13 @@ export const routeList: RouteProps[] = [
         element: <Dashboard />,
         meta: {
           titleId: 'title.dashboard'
+        }
+      },
+      {
+        path: 'service/warehouse/info',
+        element: <WarehouseServiceInfo />,
+        meta: {
+          titleId: 'title.warehouse.service.info'
         }
       },
       {
@@ -114,7 +123,7 @@ export const routeList: RouteProps[] = [
         }
       },
       {
-        path: 'user/info',
+        path: 'user/warehouse',
         element: <UserInfo />,
         meta: {
           titleId: 'title.user.info'
