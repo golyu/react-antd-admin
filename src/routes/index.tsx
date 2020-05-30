@@ -28,6 +28,8 @@ const CommodityList = lazy(() =>
   import(/* webpackChunkName: "inventory-commodity-list" */ '~/pages/inventory/commodity/list')
 )
 const InventoryDetails = lazy(() => import(/* webpackChunkName: "inventory-details" */ '~/pages/inventory/details'))
+const ShopAdd = lazy(() => import(/* webpackChunkName: "shop-add" */ '~/pages/shop/add'))
+const ShopList = lazy(() => import(/* webpackChunkName: "shop-list" */ '~/pages/shop/list'))
 
 export const routeList: RouteProps[] = [
   {
@@ -169,6 +171,20 @@ export const routeList: RouteProps[] = [
         element: <InventoryDetails />,
         meta: {
           titleId: 'title.inventory.details'
+        }
+      },
+      {
+        path: 'shop/add',
+        element: <ShopAdd />,
+        meta: {
+          titleId: 'title.shop.add'
+        }
+      },
+      {
+        path: 'shop/list',
+        element: <ShopList />,
+        meta: {
+          titleId: 'title.shop.list'
         }
       },
       {

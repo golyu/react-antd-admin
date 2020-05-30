@@ -22,5 +22,8 @@ export const enUS_title = {
   'title.inventory.manager': 'Inventory Manager',
   'title.commodity.list': 'Commodity List',
   'title.commodity.add': 'Commodity Add',
-  'title.inventory.details': 'Inventory Details'
+  'title.inventory.details': 'Inventory Details',
+  'title.shop.manager': 'Shop Manager',
+  'title.shop.add': 'Shop Add',
+  'title.shop.list': 'Shop List'
 }

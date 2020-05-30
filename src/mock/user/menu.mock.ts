@@ -209,7 +209,7 @@ const mockMenuList: MenuList = [
       {
         name: 'commodityAdd',
         label: {
-          en_US: 'Commodity Add',
+          en_US: 'Add Commodity',
           zh_CN: '添加商品'
         },
         key: '8-0',
@@ -232,6 +232,35 @@ const mockMenuList: MenuList = [
         },
         key: '8-2',
         path: '/inventory/details'
+      }
+    ]
+  },
+  {
+    name: 'shop',
+    label: {
+      zh_CN: '店铺管理',
+      en_US: 'Shop Manager'
+    },
+    key: '9',
+    path: '/shop',
+    children: [
+      {
+        name: 'shopAdd',
+        label: {
+          zh_CN: '添加店铺',
+          en_US: 'Add Shop'
+        },
+        key: '9-0',
+        path: '/shop/add'
+      },
+      {
+        name: 'shopList',
+        label: {
+          zh_CN: '店铺列表',
+          en_US: 'Shop List'
+        },
+        key: '9-1',
+        path: '/shop/list'
       }
     ]
   }

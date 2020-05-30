@@ -22,5 +22,8 @@ export const zhCN_title = {
   'title.inventory.manager': '库存管理',
   'title.commodity.list': '商品列表',
   'title.commodity.add': '添加商品',
-  'title.inventory.details': '库存明细'
+  'title.inventory.details': '库存明细',
+  'title.shop.manager': '店铺管理',
+  'title.shop.add': '添加店铺',
+  'title.shop.list': '店铺列表'
 }
