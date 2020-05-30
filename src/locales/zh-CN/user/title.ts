@@ -15,5 +15,8 @@ export const zhCN_title = {
   'title.update.password': '修改密码',
   'title.dedicated.line.package.manager': '专线小包管理',
   'title.dedicated.line.package.try.create': '试算价格/创建订单',
-  'title.dedicated.line.package.orders': '专线小包订单列表'
+  'title.dedicated.line.package.orders': '专线小包订单列表',
+  'title.warehouse.manager': '仓储管理',
+  'title.warehouse.create': '添加仓储订单',
+  'title.warehouse.orders': '仓储订单列表'
 }

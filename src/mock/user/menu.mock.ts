@@ -167,6 +167,35 @@ const mockMenuList: MenuList = [
         path: '/package/orders'
       }
     ]
+  },
+  {
+    name: 'warehouse',
+    label: {
+      zh_CN: '仓储管理',
+      en_US: 'Warehouse Manager'
+    },
+    key: '7',
+    path: '/warehouse',
+    children: [
+      {
+        name: 'warehouseCreate',
+        label: {
+          zh_CN: '添加仓储订单',
+          en_US: 'Warehouse Create'
+        },
+        key: '7-0',
+        path: '/warehouse/create'
+      },
+      {
+        name: 'wareHouseOrders',
+        label: {
+          zh_CN: '仓储订单列表',
+          en_US: 'Warehouse Orders'
+        },
+        key: '7-1',
+        path: '/warehouse/orders'
+      }
+    ]
   }
 ]
 

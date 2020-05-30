@@ -15,5 +15,8 @@ export const enUS_title = {
   'title.update.password': 'Update Password',
   'title.dedicated.line.package.manager': 'Dedicated Line Package Manager',
   'title.dedicated.line.package.try.create': 'Trial Price/Create Order',
-  'title.dedicated.line.package.orders': 'Dedicated Package Orders'
+  'title.dedicated.line.package.orders': 'Dedicated Package Orders',
+  'title.warehouse.manager': 'Warehouse Manager',
+  'title.warehouse.create': 'Warehouse Create',
+  'title.warehouse.orders': 'WareHouse Orders'
 }

@@ -19,6 +19,8 @@ const UserInfo = lazy(() => import(/* webpackChunkName: "user-info" */ '~/pages/
 const UpdatePassword = lazy(() => import(/* webpackChunkName: "update-password" */ '~/pages/user/password'))
 const TryCreate = lazy(() => import(/* webpackChunkName: "package-create" */ '~/pages/package/create'))
 const Orders = lazy(() => import(/* webpackChunkName: "package-orders" */ '~/pages/package/orders'))
+const CreateWarehouse = lazy(() => import(/* webpackChunkName: "warehouse-create" */ '~/pages/warehouse/create'))
+const WarehouseOrders = lazy(() => import(/* webpackChunkName: "warehouse-orders" */ '~/pages/warehouse/orders'))
 
 export const routeList: RouteProps[] = [
   {
@@ -125,6 +127,20 @@ export const routeList: RouteProps[] = [
         element: <Orders />,
         meta: {
           titleId: 'title.dedicated.line.package.orders'
+        }
+      },
+      {
+        path: 'warehouse/create',
+        element: <CreateWarehouse />,
+        meta: {
+          titleId: 'title.warehouse.create'
+        }
+      },
+      {
+        path: 'warehouse/orders',
+        element: <WarehouseOrders />,
+        meta: {
+          titleId: 'title.warehouse.orders'
         }
       },
       {
