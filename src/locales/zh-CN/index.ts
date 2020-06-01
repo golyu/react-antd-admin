@@ -7,6 +7,7 @@ import { zhCN_permissionRole } from './permission/role'
 import { zhCN_dashboard } from './dashboard'
 import { zhCN_guide } from './guide'
 import { zhCN_documentation } from './documentation'
+import { zhCN_recharge } from '~/locales/zh-CN/recharge/recharge'
 
 const zh_CN = {
   ...zhCN_account,
@@ -17,7 +18,8 @@ const zh_CN = {
   ...zhCN_permissionRole,
   ...zhCN_dashboard,
   ...zhCN_guide,
-  ...zhCN_documentation
+  ...zhCN_documentation,
+  ...zhCN_recharge
 }
 
 export default zh_CN

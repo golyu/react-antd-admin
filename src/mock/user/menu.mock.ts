@@ -249,75 +249,75 @@ const mockMenuList: MenuList = [
         path: '/recharge/details'
       }
     ]
-  }
+  },
 
-  // {
-  //   name: 'documentation',
-  //   label: {
-  //     zh_CN: '文档',
-  //     en_US: 'Documentation'
-  //   },
-  //   icon: 'documentation',
-  //   key: '9',
-  //   path: '/documentation'
-  // },
-  // {
-  //   name: 'guide',
-  //   label: {
-  //     zh_CN: '引导',
-  //     en_US: 'Guide'
-  //   },
-  //   icon: 'guide',
-  //   key: '10',
-  //   path: '/guide'
-  // },
-  // {
-  //   name: 'permission',
-  //   label: {
-  //     zh_CN: '权限',
-  //     en_US: 'Permission'
-  //   },
-  //   icon: 'permission',
-  //   key: '11',
-  //   path: '/permission',
-  //   children: [
-  //     {
-  //       name: 'routePermission',
-  //       label: {
-  //         zh_CN: '路由权限',
-  //         en_US: 'Route Permission'
-  //       },
-  //       key: '11-0',
-  //       path: '/permission/route'
-  //     },
-  //     {
-  //       name: 'buttonPermission',
-  //       label: {
-  //         zh_CN: '按钮权限',
-  //         en_US: 'Button Permission'
-  //       },
-  //       key: '11-1',
-  //       path: '/permission/button'
-  //     },
-  //     {
-  //       name: 'permissionConfig',
-  //       label: {
-  //         zh_CN: '权限配置',
-  //         en_US: 'Permission Config'
-  //       },
-  //       key: '11-2',
-  //       path: '/permission/config'
-  //     },
-  //     {
-  //       name: 'notFound',
-  //       label: {
-  //         zh_CN: '404',
-  //         en_US: '404'
-  //       },
-  //       key: '11-3',
-  //       path: '/permission/404'
-  //     }
-  //   ]
-  // }
+  {
+    name: 'documentation',
+    label: {
+      zh_CN: '文档',
+      en_US: 'Documentation'
+    },
+    icon: 'documentation',
+    key: '9',
+    path: '/documentation'
+  },
+  {
+    name: 'guide',
+    label: {
+      zh_CN: '引导',
+      en_US: 'Guide'
+    },
+    icon: 'guide',
+    key: '10',
+    path: '/guide'
+  },
+  {
+    name: 'permission',
+    label: {
+      zh_CN: '权限',
+      en_US: 'Permission'
+    },
+    icon: 'permission',
+    key: '11',
+    path: '/permission',
+    children: [
+      {
+        name: 'routePermission',
+        label: {
+          zh_CN: '路由权限',
+          en_US: 'Route Permission'
+        },
+        key: '11-0',
+        path: '/permission/route'
+      },
+      {
+        name: 'buttonPermission',
+        label: {
+          zh_CN: '按钮权限',
+          en_US: 'Button Permission'
+        },
+        key: '11-1',
+        path: '/permission/button'
+      },
+      {
+        name: 'permissionConfig',
+        label: {
+          zh_CN: '权限配置',
+          en_US: 'Permission Config'
+        },
+        key: '11-2',
+        path: '/permission/config'
+      },
+      {
+        name: 'notFound',
+        label: {
+          zh_CN: '404',
+          en_US: '404'
+        },
+        key: '11-3',
+        path: '/permission/404'
+      }
+    ]
+  }
 ]
 mock.mock('/user/menu', 'get', intercepter(mockMenuList))

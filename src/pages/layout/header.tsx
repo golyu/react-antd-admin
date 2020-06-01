@@ -86,7 +86,7 @@ const HeaderComponent: FC<Props> = ({ collapsed, toggle }) => {
           <span id="sidebar-trigger">{collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}</span>
         </div>
         <div style={{ width: '100%', textAlign: 'left' }}>
-          <span style={{ marginLeft: '20px', fontSize: '26px' }}>邻派跨境仓储系统</span>
+          <span style={{ marginLeft: '20px', fontSize: '26px' }}>跨境仓储系统</span>
         </div>
         <div className="actions">
           <HeaderNoticeComponent />

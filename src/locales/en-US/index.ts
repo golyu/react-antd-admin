@@ -7,6 +7,7 @@ import { enUS_permissionRole } from './permission/role'
 import { enUS_dashboard } from './dashboard'
 import { enUS_guide } from './guide'
 import { en_US_documentation } from './documentation'
+import { enUs_recharge } from '~/locales/en-US/recharge/recharge'
 
 const en_US = {
   ...enUS_account,
@@ -17,7 +18,8 @@ const en_US = {
   ...enUS_permissionRole,
   ...enUS_dashboard,
   ...enUS_guide,
-  ...en_US_documentation
+  ...en_US_documentation,
+  ...enUs_recharge
 }
 
 export default en_US
