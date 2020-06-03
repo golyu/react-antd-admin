@@ -12,7 +12,7 @@ const { TabPane } = Tabs
 const TagsView: FC = () => {
   const { menuList } = useSelector((state: AppState) => state.userReducer)
   const { locale } = useSelector((state: AppState) => state.globalReducer)
-  const { tags, activeTagId } = useSelector((state: AppState) => state.tagsViewlReducer)
+  const { tags, activeTagId } = useSelector((state: AppState) => state.tagsViewReducer)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const location = useLocation()
@@ -41,17 +41,17 @@ const TagsView: FC = () => {
             id: dashboard.key,
             closable: false
           })
-        ),
-          // Initializes the tag generated for the current page
-          // Duplicate tag will be ignored in redux.
-          dispatch(
-            addTag({
-              path: menu.path,
-              label: menu.label,
-              id: menu.key,
-              closable: true
-            })
-          )
+        )
+        // Initializes the tag generated for the current page
+        // Duplicate tag will be ignored in redux.
+        dispatch(
+          addTag({
+            path: menu.path,
+            label: menu.label,
+            id: menu.key,
+            closable: true
+          })
+        )
       }
     }
   }, [dispatch, location.pathname, menuList])

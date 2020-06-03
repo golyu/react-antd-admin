@@ -16,19 +16,22 @@ export interface GlobalState {
 
   /** Is first time to view the site ? */
   newUser: boolean
+
+  /** Is 主题颜色  */
+  themeColor: string
 }
 
-const SETGLOBALITEM = 'SETGLOBALITEM'
+const SET_GLOBAL_ITEM = 'SET_GLOBAL_ITEM'
 
-type SETGLOBALITEM = typeof SETGLOBALITEM
+type SET_GLOBAL_ITEM = typeof SET_GLOBAL_ITEM
 
-interface SetGloabalItem extends Action<SETGLOBALITEM> {
+interface SetGlobalItem extends Action<SET_GLOBAL_ITEM> {
   payload: Partial<GlobalState>
 }
 
-export const setGlobalItem = (payload: Partial<GlobalState>): SetGloabalItem => ({
-  type: 'SETGLOBALITEM',
+export const setGlobalItem = (payload: Partial<GlobalState>): SetGlobalItem => ({
+  type: 'SET_GLOBAL_ITEM',
   payload
 })
 
-export type GlobalActions = SetGloabalItem
+export type GlobalActions = SetGlobalItem

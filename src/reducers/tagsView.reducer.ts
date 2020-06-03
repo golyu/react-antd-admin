@@ -6,7 +6,7 @@ const tagsViewState: TagState = {
   activeTagId: ''
 }
 
-export const tagsViewlReducer = (state = tagsViewState, actions: TagsActions): TagState => {
+export const tagsViewReducer = (state = tagsViewState, actions: TagsActions): TagState => {
   const tags = [...state.tags]
   switch (actions.type) {
     case 'SETACTIVETAG':

@@ -7,7 +7,7 @@ import { AppState } from '~/stores'
 import { LocaleFormatter } from '~/locales'
 
 const TagsViewAction: FC = () => {
-  const { activeTagId } = useSelector((state: AppState) => state.tagsViewlReducer)
+  const { activeTagId } = useSelector((state: AppState) => state.tagsViewReducer)
   const dispatch = useDispatch()
   return (
     <Dropdown

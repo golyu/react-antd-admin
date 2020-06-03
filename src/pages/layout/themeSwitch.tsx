@@ -2,6 +2,8 @@ import React, { FC, useState } from 'react'
 import { Popover, message } from 'antd'
 import { CheckOutlined, FontColorsOutlined } from '@ant-design/icons'
 import { useLocale } from '~/locales'
+import { setGlobalItem } from '~/actions/global.action'
+import { useDispatch } from 'react-redux'
 
 const colors = [
   '#13C2C2',
@@ -19,6 +21,7 @@ const defaultVars = {
 }
 
 export const ThemeSwitch: FC = () => {
+  const dispatch = useDispatch()
   const [theme, setTheme] = useState<string>(colors[0])
   const [vars, setVars] = useState(() => {
     const data = Object.assign({}, defaultVars, JSON.parse(localStorage.getItem('app-theme')!))
@@ -37,7 +40,8 @@ export const ThemeSwitch: FC = () => {
       .then(() => {
         setTheme(color)
         setVars(newVar)
-        localStorage.setItem('app-theme', JSON.stringify(newVar))
+        // localStorage.setItem('app-theme', JSON.stringify(newVar))
+        selectThemeLocale(newVar)
         message.destroy()
         message.success(formatMessage({ id: 'global.theme.switchThemeDone' }))
       })
@@ -45,6 +49,11 @@ export const ThemeSwitch: FC = () => {
         message.error(formatMessage({ id: 'global.theme.switchThemeFail' }))
         console.error('Failed to update theme')
       })
+  }
+  //更新redux中的主题颜色
+  const selectThemeLocale = (newVar: any) => {
+    dispatch(setGlobalItem({ themeColor: newVar['@primary-color'] }))
+    localStorage.setItem('app-theme', JSON.stringify(newVar))
   }
 
   return (
