@@ -40,7 +40,7 @@ export type Response<T = any> = {
   result: T
 }
 
-type Method = 'get' | 'post'
+type Method = 'get' | 'post' | 'put' | 'delete'
 
 export type MyResponse<T = any> = Promise<Response<T>>
 
@@ -49,6 +49,7 @@ export type MyResponse<T = any> = Promise<Response<T>>
  * @param method - request methods
  * @param url - request url
  * @param data - request data or params
+ * @param config - 配置
  */
 export const request = <T = any>(
   method: Method,
@@ -59,7 +60,7 @@ export const request = <T = any>(
   // const prefix = '/api'
   const prefix = ''
   url = prefix + url
-  if (method === 'post') {
+  if (method === 'post' || method === 'put') {
     return axios.post(url, data, config)
   } else {
     return axios.get(url, {

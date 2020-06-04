@@ -17,5 +17,6 @@ export const zhCN_globalTips = {
   'global.tips.reset': '重置',
   'global.tips.deleteConfirm': '确定要删除此条数据吗？',
   'global.tips.website': '官网',
-  'global.tips.record': '粤ICP备1000000号 | Copyright © 2020 - 2030'
+  'global.tips.record': '粤ICP备1000000号 | Copyright © 2020 - 2030',
+  'global.tips.time': '时间'
 }

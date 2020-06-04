@@ -23,3 +23,15 @@ export default function useTableSelectStatusLocale(lang: Language) {
   if (lang === 'en_US') return genSelect(en_US, def)
   return genSelect(zh_CN, def)
 }
+
+export function getTableSelectStatusLocale(lang: Language) {
+  const newMap = new Map<string, number>()
+  let temp = zh_CN
+  if (lang === 'en_US') {
+    temp = en_US
+  }
+  temp.forEach((value, key) => {
+    newMap.set(value.text, key)
+  })
+  return newMap
+}

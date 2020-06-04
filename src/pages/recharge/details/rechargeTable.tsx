@@ -9,8 +9,8 @@ import { useSelector } from 'react-redux'
 import { AppState } from '~/stores'
 import useTableSelectTypeLocale from '~/hooks/useTableSelectTypeLocale'
 import useTableSelectPayMethodLocale from '~/hooks/useTableSelectPayMethodLocale'
-import './index.less'
 import LcdTime from '~/components/lcdTime'
+import { PageMeta } from '~/interface/page/page.interface'
 
 const RechargeTable: FC = () => {
   const { formatMessage } = useLocale()
@@ -18,6 +18,12 @@ const RechargeTable: FC = () => {
   const selectStatus = useTableSelectStatusLocale(locale)
   const selectType = useTableSelectTypeLocale(locale)
   const selectPayMethod = useTableSelectPayMethodLocale(locale)
+  const [loading, setLoading] = useState<boolean>(false)
+  const [pageMeta, setPageMeta] = useState<PageMeta>({ pageSize: 20, currentPage: 1, total: 0 })
+  const [tableData, setTableData] = useState<RechargeDetails>({
+    rechargeList: [],
+    pageMeta: { total: 0, pageSize: 0, currentPage: 1 }
+  })
   const columns: ColumnProps<RechargeItem>[] = [
     {
       title: formatMessage({ id: 'app.recharge.id' }),
@@ -79,17 +85,50 @@ const RechargeTable: FC = () => {
       render: createdAt => <LcdTime timestamp={createdAt} />
     }
   ]
-  const [tableData, setTableData] = useState<RechargeDetails>()
-  const initData = useCallback(async () => {
-    const { result, status } = await apiGetRechargeDetails()
-    if (status) {
-      setTableData(result)
-    }
+
+  const initData = useCallback(() => {
+    setLoading(true)
+    apiGetRechargeDetails()
+      .then(value => {
+        setPageMeta(value.result.pageMeta)
+        setTableData(value.result)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
   }, [])
 
   useEffect(() => {
     initData()
   }, [initData])
-  return <Table rowKey="id" columns={columns} dataSource={tableData?.rechargeList} />
+
+  return (
+    <Table
+      rowKey="id"
+      loading={loading}
+      columns={columns}
+      dataSource={tableData?.rechargeList}
+      pagination={{
+        position: ['bottomLeft'],
+        showSizeChanger: true,
+        defaultPageSize: pageMeta.pageSize,
+        total: pageMeta.total,
+        defaultCurrent: pageMeta.currentPage,
+        onShowSizeChange: (current: number, size: number) => {
+          // 如果当前table已经显示了有数据,更改默认的每页条数,就重新发起api请求
+          if (tableData?.rechargeList.length > 0) {
+            initData()
+            console.log('页面有数据,重新发起请求', 'current:', current, 'size:', size)
+          }
+        },
+        onChange: (page: number, pageSize: number | undefined) => {
+          if (tableData?.rechargeList.length > 0) {
+            initData()
+            console.log('页面有数据,重新发起请求', 'page:', pageSize, 'pageSize:', pageSize)
+          }
+        }
+      }}
+    />
+  )
 }
 export default RechargeTable

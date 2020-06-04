@@ -1,18 +1,11 @@
 import React, { FC } from 'react'
 import RechargeTable from '~/pages/recharge/details/rechargeTable'
-import { Typography } from 'antd'
-import './index.less'
+import RechargeSearch from '~/pages/recharge/details/rechargeSearch'
 
 const RechargeDetails: FC = () => {
-  const { Title } = Typography
-  const balance = 55
   return (
     <div>
-      <div style={{ paddingLeft: '20px', paddingTop: '20px' }}>
-        <Title level={4}>
-          充值明细(当前积分:<span className="score">{balance}</span>)
-        </Title>
-      </div>
+      <RechargeSearch />
       <RechargeTable />
     </div>
   )

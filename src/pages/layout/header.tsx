@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import HeaderNoticeComponent from './notice'
 import { useDispatch, useSelector } from 'react-redux'
 import { logoutAsync } from '~/actions/user.action'
-import Avator from '~/assets/header/avator.jpeg'
+import Avator from '~/assets/header/avator.png'
 import { AppState } from '~/stores'
 import { ReactComponent as LanguageSvg } from '~/assets/header/language.svg'
 import { ReactComponent as ZhCnSvg } from '~/assets/header/zh_CN.svg'
@@ -13,7 +13,6 @@ import { ReactComponent as EnUsSvg } from '~/assets/header/en_US.svg'
 import { setGlobalItem } from '~/actions/global.action'
 import { LocaleFormatter, useLocale } from '~/locales'
 import ReactSvg from '~/assets/logo/react.svg'
-import AntdSvg from '~/assets/logo/antd.svg'
 
 const { Header } = Layout
 
@@ -73,12 +72,16 @@ const HeaderComponent: FC<Props> = ({ collapsed, toggle }) => {
       </Menu.Item>
     </Menu>
   )
+  const balance = 55
+  const { themeColor } = useSelector((state: AppState) => state.globalReducer)
   return (
     <Header className="layout-page-header">
       {device !== 'MOBILE' && (
         <div className="logo" style={{ width: collapsed ? 80 : 200 }}>
           <img src={ReactSvg} alt="" style={{ marginRight: collapsed ? '2px' : '20px' }} />
-          <img src={AntdSvg} alt="" />
+          <div>
+            积分:<span style={{ color: themeColor }}>{balance}</span>
+          </div>
         </div>
       )}
       <div className="layout-page-header-main">

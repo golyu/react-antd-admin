@@ -16,5 +16,6 @@ export const enUS_globalTips = {
   'global.tips.reset': 'Reset',
   'global.tips.deleteConfirm': 'Do you Want to delete these items?',
   'global.tips.website': 'website',
-  'global.tips.record': '粤ICP备1000000号 | Copyright © 2020 - 2030'
+  'global.tips.record': '粤ICP备1000000号 | Copyright © 2020 - 2030',
+  'global.tips.time': 'time'
 }

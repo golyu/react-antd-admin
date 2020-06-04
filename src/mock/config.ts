@@ -1,8 +1,8 @@
 import Mock from 'mockjs'
-import { Response } from '../api/request'
+import { Response } from '~/api/request'
 
 Mock.setup({
-  timeout: 300
+  timeout: '1000-1500'
 })
 
 // Mock the real back-end api structure.
