@@ -3,6 +3,7 @@ const path = require('path')
 // const darkThemeVars = require('antd/dist/dark-theme')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const AntDesignThemePlugin = require('antd-theme-webpack-plugin')
+const AntdDayjsWebpackPlugin  =  require('antd-dayjs-webpack-plugin')
 
 const options = {
   antDir: path.join(__dirname, './node_modules/antd'),
@@ -11,7 +12,7 @@ const options = {
   mainLessFile: path.join(__dirname, './src/styles/index.less'),
   themeVariables: ['@primary-color'],
   indexFileName: 'index.html',
-  generateOnce: false,
+  generateOnce: false
 }
 
 const resolve = dir => path.join(__dirname, '.', dir)
@@ -33,14 +34,15 @@ module.exports = override(
       // ...darkThemeVars,
       '@primary-color': '#13c2c2'
     },
-    javascriptEnabled: true,
+    javascriptEnabled: true
   }),
   addWebpackAlias({
-    '~': resolve('src'),
+    '~': resolve('src')
   }),
   addWebpackPlugin(
     // new BundleAnalyzerPlugin(),
-    new AntDesignThemePlugin(options)
+    new AntDesignThemePlugin(options),
+    new AntdDayjsWebpackPlugin()
   ),
   rewiredSourceMap()
 )

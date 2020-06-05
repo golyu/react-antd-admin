@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker'
 import App from './App'
 import './mock'
+import 'dayjs/locale/zh-cn'
 const store = configureStore()
 
 const render = (Router: React.FC) => {
