@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from 'react'
 import { useLocale } from '~/locales'
-import { Button, Col, DatePicker, Form, Row, Select } from 'antd'
+import { Button, Col, DatePicker, Form, Row, Select, Tag } from 'antd'
 import { getTableSelectStatusLocale } from '~/hooks/useTableSelectStatusLocale'
 import { useSelector } from 'react-redux'
 import { AppState } from '~/stores'
@@ -18,8 +18,8 @@ const RechargeSearch: FC = () => {
   const selectType = getTableSelectTypeLocale(locale)
   const selectPayMethod = getTableSelectPayMethodLocale(locale)
 
-  const onSearch = () => {
-    console.log('点击搜索')
+  const onSearch = (values: any) => {
+    console.log('点击搜索', values)
   }
   //类型搜索框
   const TypeItem: FC = () => {
@@ -33,7 +33,7 @@ const RechargeSearch: FC = () => {
     })
     return (
       <Col span={4}>
-        <Item label={formatMessage({ id: 'app.recharge.cause' })} name="xx">
+        <Item label={formatMessage({ id: 'app.recharge.cause' })} name="cause">
           <Select>{select}</Select>
         </Item>
       </Col>
@@ -42,16 +42,18 @@ const RechargeSearch: FC = () => {
   //支付方式搜索框
   const PayMethodItem: FC = () => {
     const select: Array<ReactNode> = []
-    selectPayMethod.forEach((value, key) => {
+    selectPayMethod.forEach(value => {
       select.push(
-        <Select.Option key={value} value={value}>
-          {key}
+        <Select.Option key={value.code} value={value.code}>
+          <Tag icon={value.icon} color={value.color}>
+            {value.text}
+          </Tag>
         </Select.Option>
       )
     })
     return (
       <Col span={4}>
-        <Item label={formatMessage({ id: 'app.recharge.pay.method' })} name="xx2">
+        <Item label={formatMessage({ id: 'app.recharge.pay.method' })} name="payMethod">
           <Select>{select}</Select>
         </Item>
       </Col>
@@ -60,16 +62,16 @@ const RechargeSearch: FC = () => {
   //状态
   const StatusItem: FC = () => {
     const select: Array<ReactNode> = []
-    selectStatus.forEach((value, key) => {
+    selectStatus.forEach(value => {
       select.push(
-        <Select.Option key={value} value={value}>
-          {key}
+        <Select.Option key={value.code} value={value.code}>
+          <Tag color={value.color}>{value.text}</Tag>
         </Select.Option>
       )
     })
     return (
       <Col span={4}>
-        <Item label={formatMessage({ id: 'app.permission.role.status' })} name="x3">
+        <Item label={formatMessage({ id: 'app.permission.role.status' })} name="status">
           <Select>{select}</Select>
         </Item>
       </Col>
@@ -79,15 +81,14 @@ const RechargeSearch: FC = () => {
   const TimeItem: FC = () => {
     return (
       <Col span={8}>
-        <Item label={formatMessage({ id: 'global.tips.time' })} name="x4">
+        <Item label={formatMessage({ id: 'global.tips.time' })} name="timeInterval">
           <RangePicker showTime />
         </Item>
       </Col>
     )
   }
-
   return (
-    <Form layout="inline" form={form}>
+    <Form layout="inline" form={form} onFinish={onSearch}>
       <Row gutter={24} style={{ width: '100%' }}>
         <TypeItem />
         <PayMethodItem />
@@ -95,7 +96,7 @@ const RechargeSearch: FC = () => {
         <TimeItem />
         <Col span={3}>
           <Item>
-            <Button type="primary" onClick={onSearch}>
+            <Button type="primary" onClick={form.submit}>
               {formatMessage({ id: 'global.tips.search' })}
             </Button>
             <Button style={{ marginLeft: '10px' }} onClick={() => form.resetFields()}>

@@ -14,35 +14,31 @@ const AliPayIcon = (props: any) => <Icon component={AliPaySvg} {...props} />
 const UnionPayIcon = (props: any) => <Icon component={UnionPaySvg} {...props} />
 
 interface PayMethod {
+  code: number
   color: LiteralUnion<PresetColorType | PresetStatusColorType, string>
   text: string
   icon: ReactNode
 }
 
 const en_US = new Map<number, PayMethod>()
-  .set(1, { color: 'green', text: 'WeChatPay', icon: <WeChatPayIcon /> })
-  .set(2, { color: 'blue', text: 'AliPay', icon: <AliPayIcon /> })
-  .set(3, { color: 'orange', text: 'UnionPay', icon: <UnionPayIcon /> })
+  .set(1, { code: 1, color: 'green', text: 'WeChatPay', icon: <WeChatPayIcon /> })
+  .set(2, { code: 2, color: 'blue', text: 'AliPay', icon: <AliPayIcon /> })
+  .set(3, { code: 3, color: 'orange', text: 'UnionPay', icon: <UnionPayIcon /> })
 
 const zh_CN = new Map<number, PayMethod>()
-  .set(1, { color: 'green', text: '微信', icon: <WeChatPayIcon /> })
-  .set(2, { color: 'blue', text: '支付宝', icon: <AliPayIcon /> })
-  .set(3, { color: 'orange', text: '银联', icon: <UnionPayIcon /> })
+  .set(1, { code: 1, color: 'green', text: '微信', icon: <WeChatPayIcon /> })
+  .set(2, { code: 2, color: 'blue', text: '支付宝', icon: <AliPayIcon /> })
+  .set(3, { code: 3, color: 'orange', text: '银联', icon: <UnionPayIcon /> })
 
 export default function useTableSelectPayMethodLocale(lang: Language) {
-  const def = { color: 'red', text: 'Not Found', icon: <PayCircleOutlined /> }
+  const def = { code: 4, color: 'red', text: 'Not Found', icon: <PayCircleOutlined /> }
   if (lang === 'en_US') return genSelect(en_US, def)
   return genSelect(zh_CN, def)
 }
 
 export function getTableSelectPayMethodLocale(lang: Language) {
-  const newMap = new Map<string, number>()
-  let temp = zh_CN
   if (lang === 'en_US') {
-    temp = en_US
+    return en_US
   }
-  temp.forEach((value, key) => {
-    newMap.set(value.text, key)
-  })
-  return newMap
+  return zh_CN
 }

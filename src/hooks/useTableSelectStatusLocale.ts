@@ -4,19 +4,20 @@ import { PresetColorType, PresetStatusColorType } from 'antd/lib/_util/colors'
 import { genSelect } from '~/utils/select'
 
 interface Status {
+  code: number
   color: LiteralUnion<PresetColorType | PresetStatusColorType, string>
   text: string
 }
 
 const en_US = new Map<number, Status>()
-  .set(1, { color: 'purple', text: 'processing' })
-  .set(2, { color: 'green', text: 'success' })
-  .set(3, { color: 'volcano', text: 'failure' })
+  .set(1, { code: 1, color: 'purple', text: 'processing' })
+  .set(2, { code: 2, color: 'green', text: 'success' })
+  .set(3, { code: 3, color: 'volcano', text: 'failure' })
 
 const zh_CN = new Map<number, Status>()
-  .set(1, { color: 'purple', text: '进行中' })
-  .set(2, { color: 'green', text: '成功' })
-  .set(3, { color: 'volcano', text: '失败' })
+  .set(1, { code: 1, color: 'purple', text: '进行中' })
+  .set(2, { code: 2, color: 'green', text: '成功' })
+  .set(3, { code: 3, color: 'volcano', text: '失败' })
 
 export default function useTableSelectStatusLocale(lang: Language) {
   const def = { color: 'red', text: 'Not Found' }
@@ -25,13 +26,8 @@ export default function useTableSelectStatusLocale(lang: Language) {
 }
 
 export function getTableSelectStatusLocale(lang: Language) {
-  const newMap = new Map<string, number>()
-  let temp = zh_CN
   if (lang === 'en_US') {
-    temp = en_US
+    return en_US
   }
-  temp.forEach((value, key) => {
-    newMap.set(value.text, key)
-  })
-  return newMap
+  return zh_CN
 }
