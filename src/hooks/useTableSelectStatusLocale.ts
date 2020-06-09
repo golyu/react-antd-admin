@@ -9,15 +9,17 @@ interface Status {
   text: string
 }
 
-const en_US = new Map<number, Status>()
-  .set(1, { code: 1, color: 'purple', text: 'processing' })
-  .set(2, { code: 2, color: 'green', text: 'success' })
-  .set(3, { code: 3, color: 'volcano', text: 'failure' })
+const en_US = new Map<number, Status>([
+  [1, { code: 1, color: 'purple', text: 'processing' }],
+  [2, { code: 2, color: 'green', text: 'success' }],
+  [3, { code: 3, color: 'volcano', text: 'failure' }]
+])
 
-const zh_CN = new Map<number, Status>()
-  .set(1, { code: 1, color: 'purple', text: '进行中' })
-  .set(2, { code: 2, color: 'green', text: '成功' })
-  .set(3, { code: 3, color: 'volcano', text: '失败' })
+const zh_CN = new Map<number, Status>([
+  [1, { code: 1, color: 'purple', text: '进行中' }],
+  [2, { code: 2, color: 'green', text: '成功' }],
+  [3, { code: 3, color: 'volcano', text: '失败' }]
+])
 
 export default function useTableSelectStatusLocale(lang: Language) {
   const def = { color: 'red', text: 'Not Found' }
