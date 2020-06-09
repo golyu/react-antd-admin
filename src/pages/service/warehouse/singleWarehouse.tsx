@@ -6,6 +6,7 @@ import TableTime from '~/pages/service/warehouse/tableTime'
 import { toPercent4 } from '~/utils/float'
 import { useSelector } from 'react-redux'
 import { AppState } from '~/stores'
+import CopyButton from '~/components/copyButton'
 
 const { Panel } = Collapse
 
@@ -136,22 +137,17 @@ const SingleWarehouse: FC<Props> = ({ singleWarehouse, selectVerificationMethodL
           <p>
             <span style={subTitle}>地 址:</span>
             {singleWarehouse.address}
+            <CopyButton text={singleWarehouse.address} />
           </p>
           <p>
             <span style={subTitle}>收件人:</span>
             {singleWarehouse.recipient}
+            <CopyButton text={singleWarehouse.recipient} />
           </p>
           <p>
             <span style={subTitle}>号 码:</span>
             {singleWarehouse.phone}
-          </p>
-          <p>
-            {/*<CopyToClipboard text="Hello!">*/}
-            {/*  <button>复制全部</button>*/}
-            {/*</CopyToClipboard>*/}
-            {/*<CopyToClipboard text={text}>*/}
-            {/*  <span>点击复制这条文本</span>*/}
-            {/*</CopyToClipboard>*/}
+            <CopyButton text={singleWarehouse.phone} />
           </p>
         </Panel>
       </Collapse>
