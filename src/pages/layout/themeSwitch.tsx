@@ -35,20 +35,22 @@ export const ThemeSwitch: FC = () => {
     message.loading(formatMessage({ id: 'global.theme.switchingTheme' }))
     const newVar: any = { ...vars }
     newVar['@primary-color'] = color
-    window.less
-      .modifyVars(newVar)
-      .then(() => {
-        setTheme(color)
-        setVars(newVar)
-        // localStorage.setItem('app-theme', JSON.stringify(newVar))
-        selectThemeLocale(newVar)
-        message.destroy()
-        message.success(formatMessage({ id: 'global.theme.switchThemeDone' }))
-      })
-      .catch(() => {
-        message.error(formatMessage({ id: 'global.theme.switchThemeFail' }))
-        console.error('Failed to update theme')
-      })
+    setTimeout(() => {
+      window.less
+        .modifyVars(newVar)
+        .then(() => {
+          setTheme(color)
+          setVars(newVar)
+          // localStorage.setItem('app-theme', JSON.stringify(newVar))
+          selectThemeLocale(newVar)
+          message.destroy()
+          message.success(formatMessage({ id: 'global.theme.switchThemeDone' }))
+        })
+        .catch(() => {
+          message.error(formatMessage({ id: 'global.theme.switchThemeFail' }))
+          console.error('Failed to update theme')
+        })
+    }, 300)
   }
   //更新redux中的主题颜色
   const selectThemeLocale = (newVar: any) => {
